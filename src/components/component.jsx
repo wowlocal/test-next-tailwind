@@ -36,7 +36,7 @@ export default function Component() {
               </div>
             </div>
             <div className="relative h-[400px] md:h-[500px] overflow-hidden rounded-lg">
-              <img src="/placeholder.svg" alt="Vegan Dishes" fill className="object-cover" />
+              <img src="/placeholder.svg" alt="Vegan Dishes" fill="none" className="object-cover" />
             </div>
           </div>
         </div>
