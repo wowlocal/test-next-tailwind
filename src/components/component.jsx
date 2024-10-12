@@ -206,7 +206,7 @@ export default function Component() {
         </section>
       </main>
       <aside className="bg-muted py-12 md:py-16">
-        <div className="container grid grid-cols-1 md:grid-cols-3 gap-8">
+        <div className="container grid mx-auto px-4 grid-cols-1 md:grid-cols-3 gap-8">
           <div className="space-y-4">
             <h2 className="text-2xl font-bold">Categories</h2>
             <ul className="space-y-2">
@@ -304,7 +304,7 @@ export default function Component() {
         </div>
       </aside>
       <footer className="bg-muted text-muted-foreground py-6 md:py-8">
-        <div className="container flex items-center justify-between">
+        <div className="container mx-auto px-4 flex items-center justify-between">
           <p className="text-sm">&copy; 2024 Vegan Recipes Blog. All rights reserved.</p>
           <div className="flex gap-4">
             <Link href="#" className="text-muted-foreground hover:text-foreground" prefetch={false}>
