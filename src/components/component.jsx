@@ -36,7 +36,7 @@ export default function Component() {
               </div>
             </div>
             <div className="relative h-[400px] md:h-[500px] overflow-hidden rounded-lg">
-              <img src="/placeholder.svg" alt="Vegan Dishes" fill="none" className="object-cover" />
+              <img src="/placeholder.svg" alt="Vegan Dishes" className="object-cover w-full h-full" />
             </div>
           </div>
         </div>
@@ -50,7 +50,7 @@ export default function Component() {
                   <img
                     src="/placeholder.svg"
                     alt="Vegan Dish"
-                    width={400}
+                    width={700}
                     height={250}
                     className="object-cover rounded-t-lg"
                     style={{ aspectRatio: "400/250", objectFit: "cover" }}
@@ -75,7 +75,7 @@ export default function Component() {
                   <img
                     src="/placeholder.svg"
                     alt="Vegan Dish"
-                    width={400}
+                    width={700}
                     height={250}
                     className="object-cover rounded-t-lg"
                     style={{ aspectRatio: "400/250", objectFit: "cover" }}
@@ -100,7 +100,7 @@ export default function Component() {
                   <img
                     src="/placeholder.svg"
                     alt="Vegan Dish"
-                    width={400}
+                    width={700}
                     height={250}
                     className="object-cover rounded-t-lg"
                     style={{ aspectRatio: "400/250", objectFit: "cover" }}
@@ -127,7 +127,7 @@ export default function Component() {
                   <img
                     src="/placeholder.svg"
                     alt="Vegan Dish"
-                    width={400}
+                    width={700}
                     height={250}
                     className="object-cover rounded-t-lg"
                     style={{ aspectRatio: "400/250", objectFit: "cover" }}
@@ -154,7 +154,7 @@ export default function Component() {
                   <img
                     src="/placeholder.svg"
                     alt="Vegan Dish"
-                    width={400}
+                    width={700}
                     height={250}
                     className="object-cover rounded-t-lg"
                     style={{ aspectRatio: "400/250", objectFit: "cover" }}
@@ -181,7 +181,7 @@ export default function Component() {
                   <img
                     src="/placeholder.svg"
                     alt="Vegan Dish"
-                    width={400}
+                    width={700}
                     height={250}
                     className="object-cover rounded-t-lg"
                     style={{ aspectRatio: "400/250", objectFit: "cover" }}
