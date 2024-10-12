@@ -11,7 +11,7 @@ export default function Component() {
   return (
     <div className="flex flex-col min-h-screen">
       <header className="bg-primary text-primary-foreground w-full">
-        <div className="container p-4 py-6 md:py-12">
+        <div className="container mx-auto px-6 py-6 md:py-12">
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
             <div className="space-y-4">
               <h1 className="text-4xl font-bold tracking-tight md:text-5xl">Delicious Vegan Recipes</h1>
@@ -42,8 +42,8 @@ export default function Component() {
         </div>
       </header>
       <main className="flex-1">
-        <section className="py-12 p-6 md:py-16">
-          <div className="container">
+        <section className="py-12 px-4 md:py-16">
+          <div className="container mx-auto">
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
               <Card>
                 <CardContent className="p-0">
