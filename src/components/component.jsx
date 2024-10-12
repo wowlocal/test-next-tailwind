@@ -35,7 +35,7 @@ export default function Component() {
                 </Link>
               </div>
             </div>
-            <div className="relative h-[400px] md:h-[500px] overflow-hidden rounded-lg">
+            <div className="relative h-[400px] md:h-[350px] lg:h-[400px] overflow-hidden rounded-lg">
               <img src="/placeholder.svg" alt="Vegan Dishes" className="object-cover w-full h-full" />
             </div>
           </div>
