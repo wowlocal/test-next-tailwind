@@ -1,13 +1,29 @@
+"use client"
 /**
  * v0 by Vercel.
  * @see https://v0.dev/t/28N3lk4Iqku
  * Documentation: https://v0.dev/docs#integrating-generated-code-into-your-nextjs-app
  */
+import { useState, useEffect } from 'react';
 import Link from "next/link"
 import { Card, CardContent, CardHeader, CardTitle, CardDescription, CardFooter } from "@/components/ui/card"
 import { Input } from "@/components/ui/input"
 
 export default function Component() {
+  const [recipes, setRecipes] = useState([]);
+  useEffect(() => {
+    const fetchRecipes = async () => {
+      try {
+        const response = await fetch('http://localhost:5001/api/recipes');
+        const data = await response.json();
+        setRecipes(data);
+      } catch (error) {
+        console.error('Error fetching recipes:', error);
+      }
+    };
+
+    fetchRecipes();
+  }, []);
   return (
     <div className="flex flex-col min-h-screen">
       <header className="bg-primary text-primary-foreground w-full">
@@ -45,162 +61,33 @@ export default function Component() {
         <section className="py-12 px-4 md:py-16">
           <div className="container mx-auto">
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-              <Card>
-                <CardContent className="p-0">
-                  <img
-                    src="/placeholder.svg"
-                    alt="Vegan Dish"
-                    width={700}
-                    height={250}
-                    className="object-cover rounded-t-lg"
-                    style={{ aspectRatio: "400/250", objectFit: "cover" }}
-                  />
-                </CardContent>
-                <CardHeader>
-                  <CardTitle>Creamy Cashew Pasta</CardTitle>
-                  <CardDescription>A rich and creamy vegan pasta dish made with a cashew-based sauce.</CardDescription>
-                </CardHeader>
-                <CardFooter>
-                  <Link
-                    href="#"
-                    className="inline-flex items-center justify-center rounded-md bg-primary px-4 py-2 text-sm font-medium text-primary-foreground shadow-sm transition-colors hover:bg-primary/90 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2"
-                    prefetch={false}
-                  >
-                    View Recipe
-                  </Link>
-                </CardFooter>
-              </Card>
-              <Card>
-                <CardContent className="p-0">
-                  <img
-                    src="/placeholder.svg"
-                    alt="Vegan Dish"
-                    width={700}
-                    height={250}
-                    className="object-cover rounded-t-lg"
-                    style={{ aspectRatio: "400/250", objectFit: "cover" }}
-                  />
-                </CardContent>
-                <CardHeader>
-                  <CardTitle>Roasted Vegetable Medley</CardTitle>
-                  <CardDescription>A colorful and flavorful mix of roasted seasonal vegetables.</CardDescription>
-                </CardHeader>
-                <CardFooter>
-                  <Link
-                    href="#"
-                    className="inline-flex items-center justify-center rounded-md bg-primary px-4 py-2 text-sm font-medium text-primary-foreground shadow-sm transition-colors hover:bg-primary/90 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2"
-                    prefetch={false}
-                  >
-                    View Recipe
-                  </Link>
-                </CardFooter>
-              </Card>
-              <Card>
-                <CardContent className="p-0">
-                  <img
-                    src="/placeholder.svg"
-                    alt="Vegan Dish"
-                    width={700}
-                    height={250}
-                    className="object-cover rounded-t-lg"
-                    style={{ aspectRatio: "400/250", objectFit: "cover" }}
-                  />
-                </CardContent>
-                <CardHeader>
-                  <CardTitle>Lentil and Sweet Potato Curry</CardTitle>
-                  <CardDescription>
-                    A comforting and nourishing vegan curry with lentils and sweet potatoes.
-                  </CardDescription>
-                </CardHeader>
-                <CardFooter>
-                  <Link
-                    href="#"
-                    className="inline-flex items-center justify-center rounded-md bg-primary px-4 py-2 text-sm font-medium text-primary-foreground shadow-sm transition-colors hover:bg-primary/90 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2"
-                    prefetch={false}
-                  >
-                    View Recipe
-                  </Link>
-                </CardFooter>
-              </Card>
-              <Card>
-                <CardContent className="p-0">
-                  <img
-                    src="/placeholder.svg"
-                    alt="Vegan Dish"
-                    width={700}
-                    height={250}
-                    className="object-cover rounded-t-lg"
-                    style={{ aspectRatio: "400/250", objectFit: "cover" }}
-                  />
-                </CardContent>
-                <CardHeader>
-                  <CardTitle>Quinoa and Avocado Salad</CardTitle>
-                  <CardDescription>
-                    A refreshing and protein-packed vegan salad with quinoa and avocado.
-                  </CardDescription>
-                </CardHeader>
-                <CardFooter>
-                  <Link
-                    href="#"
-                    className="inline-flex items-center justify-center rounded-md bg-primary px-4 py-2 text-sm font-medium text-primary-foreground shadow-sm transition-colors hover:bg-primary/90 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2"
-                    prefetch={false}
-                  >
-                    View Recipe
-                  </Link>
-                </CardFooter>
-              </Card>
-              <Card>
-                <CardContent className="p-0">
-                  <img
-                    src="/placeholder.svg"
-                    alt="Vegan Dish"
-                    width={700}
-                    height={250}
-                    className="object-cover rounded-t-lg"
-                    style={{ aspectRatio: "400/250", objectFit: "cover" }}
-                  />
-                </CardContent>
-                <CardHeader>
-                  <CardTitle>Tofu Stir-Fry with Vegetables</CardTitle>
-                  <CardDescription>
-                    A quick and flavorful vegan stir-fry with crispy tofu and fresh vegetables.
-                  </CardDescription>
-                </CardHeader>
-                <CardFooter>
-                  <Link
-                    href="#"
-                    className="inline-flex items-center justify-center rounded-md bg-primary px-4 py-2 text-sm font-medium text-primary-foreground shadow-sm transition-colors hover:bg-primary/90 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2"
-                    prefetch={false}
-                  >
-                    View Recipe
-                  </Link>
-                </CardFooter>
-              </Card>
-              <Card>
-                <CardContent className="p-0">
-                  <img
-                    src="/placeholder.svg"
-                    alt="Vegan Dish"
-                    width={700}
-                    height={250}
-                    className="object-cover rounded-t-lg"
-                    style={{ aspectRatio: "400/250", objectFit: "cover" }}
-                  />
-                </CardContent>
-                <CardHeader>
-                  <CardTitle>Baked Falafel with Tahini Sauce</CardTitle>
-                  <CardDescription>Crispy baked falafel served with a creamy tahini dipping sauce.</CardDescription>
-                </CardHeader>
-                <CardFooter>
-                  <Link
-                    href="#"
-                    className="inline-flex items-center justify-center rounded-md bg-primary px-4 py-2 text-sm font-medium text-primary-foreground shadow-sm transition-colors hover:bg-primary/90 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2"
-                    prefetch={false}
-                  >
-                    View Recipe
-                  </Link>
-                </CardFooter>
-              </Card>
+              {recipes.map((recipe) => (
+                <Card key={recipe._id}>
+                  <CardContent className="p-0">
+                    <img
+                      src={recipe.image || "/placeholder.svg"}
+                      alt={recipe.title}
+                      width={700}
+                      height={250}
+                      className="object-cover rounded-t-lg"
+                      style={{ aspectRatio: "400/250", objectFit: "cover" }}
+                    />
+                  </CardContent>
+                  <CardHeader>
+                    <CardTitle>{recipe.title}</CardTitle>
+                    <CardDescription>{recipe.description}</CardDescription>
+                  </CardHeader>
+                  <CardFooter>
+                    <Link
+                      href={`/recipe/${recipe._id}`}
+                      className="inline-flex items-center justify-center rounded-md bg-primary px-4 py-2 text-sm font-medium text-primary-foreground shadow-sm transition-colors hover:bg-primary/90 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2"
+                      prefetch={false}
+                    >
+                      View Recipe
+                    </Link>
+                  </CardFooter>
+                </Card>
+              ))}
             </div>
           </div>
         </section>
