@@ -18,10 +18,10 @@ const recipeSchema = new Schema({
 const Recipe = db.model('Recipe', recipeSchema);
 
 // Function to get all recipes
-export const getAllRecipes = async (): Promise<string> => {
+export const getAllRecipes = async (): Promise<any> => {
   try {
     const recipes = await Recipe.find();
-    return JSON.stringify(recipes.map(recipe => recipe.toJSON())); // Convert to JSON string
+    return recipes; // Convert to JSON string
   } catch (error) {
     throw new Error(error as string);
   }

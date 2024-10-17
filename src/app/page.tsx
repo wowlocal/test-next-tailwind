@@ -9,7 +9,7 @@ import { getAllRecipes } from "@/server/db";
 // }
 
 export default async function Home() {
-  const recipes = JSON.parse(await getAllRecipes());
+  const recipes = await getAllRecipes();
   return (
     <div className="">
       <Component recipes={recipes} />
