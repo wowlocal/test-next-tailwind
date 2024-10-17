@@ -1,11 +1,18 @@
 import Image from "next/image";
 import Component from "@/components/component";
 // import { MainPage } from "@/components/main-page";
+import { getAllRecipes } from "@/server/db";
 
-export default function Home() {
+// export async function getStaticProps() {
+//   const recipes = JSON.parse(await getAllRecipes());
+//   return { props: { recipes } };
+// }
+
+export default async function Home() {
+  const recipes = JSON.parse(await getAllRecipes());
   return (
     <div className="">
-      <Component />
+      <Component recipes={recipes} />
     </div>
   );
   return (

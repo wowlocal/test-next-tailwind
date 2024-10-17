@@ -1,29 +1,32 @@
-"use client"
 /**
  * v0 by Vercel.
  * @see https://v0.dev/t/28N3lk4Iqku
  * Documentation: https://v0.dev/docs#integrating-generated-code-into-your-nextjs-app
  */
-import { useState, useEffect } from 'react';
 import Link from "next/link"
 import { Card, CardContent, CardHeader, CardTitle, CardDescription, CardFooter } from "@/components/ui/card"
 import { Input } from "@/components/ui/input"
 import { getAllRecipes } from "@/server/db"
 
-export default function Component() {
-  const [recipes, setRecipes] = useState([]);
-  useEffect(() => {
-    const fetchRecipes = async () => {
-      try {
-        const recipes = JSON.parse(await getAllRecipes());
-        setRecipes(recipes);
-      } catch (error) {
-        console.error('Error fetching recipes:', error);
-      }
+export async function getStaticProps() {
+  try {
+    const recipes = JSON.parse(await getAllRecipes());
+    return {
+      props: {
+        recipes, // Pass the fetched recipes as props
+      },
     };
+  } catch (error) {
+    console.error('Error fetching recipes:', error);
+    return {
+      props: {
+        recipes: [], // Fallback to empty array if there's an error
+      },
+    };
+  }
+}
 
-    fetchRecipes();
-  }, []);
+export default function Component({ recipes = [] }) {
   return (
     <div className="flex flex-col min-h-screen">
       <header className="bg-primary text-primary-foreground w-full">
