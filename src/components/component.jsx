@@ -8,15 +8,15 @@ import { useState, useEffect } from 'react';
 import Link from "next/link"
 import { Card, CardContent, CardHeader, CardTitle, CardDescription, CardFooter } from "@/components/ui/card"
 import { Input } from "@/components/ui/input"
+import { getAllRecipes } from "@/server/db"
 
 export default function Component() {
   const [recipes, setRecipes] = useState([]);
   useEffect(() => {
     const fetchRecipes = async () => {
       try {
-        const response = await fetch('http://localhost:5001/api/recipes');
-        const data = await response.json();
-        setRecipes(data);
+        const recipes = JSON.parse(await getAllRecipes());
+        setRecipes(recipes);
       } catch (error) {
         console.error('Error fetching recipes:', error);
       }
