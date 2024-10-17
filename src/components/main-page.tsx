@@ -254,7 +254,7 @@ export function MainPage() {
   )
 }
 
-function SearchIcon(props) {
+function SearchIcon(props: React.SVGProps<SVGSVGElement>) {
   return (
     <svg
       {...props}
@@ -275,7 +275,7 @@ function SearchIcon(props) {
 }
 
 
-function TagIcon(props) {
+function TagIcon(props: React.SVGProps<SVGSVGElement>) {
   return (
     <svg
       {...props}
