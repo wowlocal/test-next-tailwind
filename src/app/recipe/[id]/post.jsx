@@ -22,7 +22,11 @@ const recipeMarkdown = `
 4. Toss in the cooked pasta, season with salt and pepper, and mix well.
 5. Serve hot, garnished with fresh basil.
 
-Enjoy your meal!
+> Enjoy your meal!
+
+![React Logo](/DSC07450.jpg)
+
+[Link to Google](https://www.google.com)
 `;
 
 export default function RecipeBlogPost({ recipe }) {

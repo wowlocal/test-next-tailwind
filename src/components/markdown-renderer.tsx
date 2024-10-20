@@ -5,6 +5,7 @@ import ReactMarkdown from 'react-markdown'
 import remarkGfm from 'remark-gfm'
 import Image from 'next/image'
 import { cn } from "@/lib/utils"
+import { Card } from '@/components/ui/card'
 
 interface MarkdownRendererProps {
   content: string
@@ -20,15 +21,16 @@ export function MarkdownRendererComponent({ content, className }: MarkdownRender
           img: ({ node, ...props }) => {
             const { src, alt } = props
             return (
-              <div className="relative w-full h-64 my-4">
-                <Image
-                  src={src || ''}
-                  alt={alt || ''}
-                  fill
-                  style={{ objectFit: 'contain' }}
-                  sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
-                />
-              </div>
+                <Card className="inline-flex justify-center p-6">
+                  <Image
+                    src={src || ''}
+                    alt={alt || ''}
+                    height={0}
+                    width={400}
+                    style={{ objectFit: 'contain' }}
+                    sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+                  />
+              </Card>
             )
           },
           // Add custom styling for other elements if needed
