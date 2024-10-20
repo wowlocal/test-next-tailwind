@@ -1,5 +1,6 @@
 import Link from "next/link"
 import { Card, CardContent, CardHeader, CardTitle, CardDescription } from "@/components/ui/card"
+import { MarkdownRendererComponent } from '@/components/markdown-renderer'
 
 // static mock data
 const recipeMarkdown = `
@@ -60,6 +61,9 @@ export default function RecipeBlogPost({ recipe }) {
               </CardDescription>
             </CardHeader>
           </Card>
+          <div className="container mx-auto p-4">
+            <MarkdownRendererComponent content={recipeMarkdown} />
+          </div>
         </article>
       </main>
       <aside className="bg-muted py-12">
