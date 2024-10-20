@@ -32,7 +32,7 @@ export const getRecipeById = async (id: string): Promise<any | null> => {
   try {
     const recipe = await Recipe.findById(id);
     if (!recipe) throw new Error('Recipe not found');
-    return recipe.toJSON(); // Convert to JSON
+    return recipe; // Convert to JSON
   } catch (error) {
     throw new Error(error as string);
   }
