@@ -41,8 +41,8 @@ function Header() {
           <ul className="flex items-center justify-center space-x-6 text-sm font-medium text-amber-800">
             <li>
               <Link href="/" className="flex items-center space-x-1 hover:text-amber-600 transition-colors">
-                <Home className="h-4 w-4" />
-                <span>Home</span>
+                <Home className="h-6 w-6" />
+                <span className="text-lg">Home</span>
               </Link>
             </li>
             <div className="flex flex-col items-center space-y-4 md:flex-row md:justify-between md:space-y-0">
