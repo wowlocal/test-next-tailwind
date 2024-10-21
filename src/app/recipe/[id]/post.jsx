@@ -37,32 +37,19 @@ function Header() {
   return (
     <header className="bg-amber-50 border-b border-amber-100">
       <div className="container mx-auto px-4 py-6">
-        <nav >
-          <ul className="flex justify-center space-x-6 text-sm font-medium text-amber-800">
+        <nav>
+          <ul className="flex items-center justify-center space-x-6 text-sm font-medium text-amber-800">
             <li>
               <Link href="/" className="flex items-center space-x-1 hover:text-amber-600 transition-colors">
                 <Home className="h-4 w-4" />
                 <span>Home</span>
               </Link>
             </li>
-            <li>
-              <Link href="/recipes" className="flex items-center space-x-1 hover:text-amber-600 transition-colors">
-                <Book className="h-4 w-4" />
-                <span>Recipes</span>
-              </Link>
-            </li>
-            <li>
-              <Link href="/about" className="flex items-center space-x-1 hover:text-amber-600 transition-colors">
-                <Users className="h-4 w-4" />
-                <span>About Us</span>
-              </Link>
-            </li>
-            <li>
-              <Link href="/blog" className="flex items-center space-x-1 hover:text-amber-600 transition-colors">
-                <Coffee className="h-4 w-4" />
-                <span>Blog</span>
-              </Link>
-            </li>
+            <div className="flex flex-col items-center space-y-4 md:flex-row md:justify-between md:space-y-0">
+              <div className="flex w-full max-w-sm items-center space-x-2">
+                <Input type="text" placeholder="Search recipes..." className="bg-white border-amber-200" />
+              </div>
+            </div>
           </ul>
         </nav>
       </div>
