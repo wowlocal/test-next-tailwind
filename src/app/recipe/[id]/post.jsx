@@ -2,6 +2,7 @@ import Link from "next/link"
 import { Card, CardContent, CardHeader, CardTitle, CardFooter, CardDescription } from "@/components/ui/card"
 import { MarkdownRendererComponent } from '@/components/markdown-renderer'
 import Image from "next/image"
+import { RichRecipeHeader } from "@/components/rich-recipe-header"
 
 // static mock data
 const recipeMarkdown = `
@@ -30,6 +31,30 @@ const recipeMarkdown = `
 [Link to Google](https://www.google.com)
 `;
 
+function UglyHeader({ recipe }) {
+  return (
+    <Card>
+    <CardContent className="p-0">
+      <img
+        src={recipe.image || "/placeholder.svg"}
+        alt={recipe.title}
+        className="w-full h-[400px] object-cover rounded-t-lg"
+      />
+    </CardContent>
+    <CardHeader>
+      <CardTitle className="text-3xl">{recipe.title}</CardTitle>
+      <CardDescription>
+        <div className="flex items-center gap-4 text-sm text-muted-foreground">
+          <span>Prep time: 15 minutes</span>
+          <span>Cook time: 30 minutes</span>
+          <span>Servings: 4</span>
+        </div>
+      </CardDescription>
+    </CardHeader>
+  </Card>
+  )
+}
+
 export default function RecipeBlogPost({ recipe }) {
   if (!recipe) {
     return <div>Recipe not found</div>;
@@ -47,28 +72,10 @@ export default function RecipeBlogPost({ recipe }) {
       </header>
       <main className="flex-1">
         <article className="container mx-auto px-4 py-12">
-          <Card>
-            <CardContent className="p-0">
-              <img
-                src={recipe.image || "/placeholder.svg"}
-                alt={recipe.title}
-                className="w-full h-[400px] object-cover rounded-t-lg"
-              />
-            </CardContent>
-            <CardHeader>
-              <CardTitle className="text-3xl">{recipe.title}</CardTitle>
-              <CardDescription>
-                <div className="flex items-center gap-4 text-sm text-muted-foreground">
-                  <span>Prep time: 15 minutes</span>
-                  <span>Cook time: 30 minutes</span>
-                  <span>Servings: 4</span>
-                </div>
-              </CardDescription>
-            </CardHeader>
-          </Card>
+          <UglyHeader recipe={recipe} />
+          <RichRecipeHeader />
           <div className="container mx-auto p-4">
             <MarkdownRendererComponent content={recipeMarkdown} />
-
           </div>
         </article>
       </main>
