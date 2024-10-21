@@ -3,11 +3,13 @@ import { Card, CardContent, CardHeader, CardTitle, CardFooter, CardDescription }
 import { MarkdownRendererComponent } from '@/components/markdown-renderer'
 import Image from "next/image"
 import { RichRecipeHeader } from "@/components/rich-recipe-header"
+import { UtensilsCrossed, Search, Home, Book, Users, Coffee } from "lucide-react"
+import { Input } from "@/components/ui/input"
+import { Button } from "@/components/ui/button"
+
 
 // static mock data
 const recipeMarkdown = `
-# Delicious Vegan Pasta
-
 ## Ingredients
 - 200g pasta
 - 2 tablespoons olive oil
@@ -30,6 +32,50 @@ const recipeMarkdown = `
 
 [Link to Google](https://www.google.com)
 `;
+
+function Header() {
+  return (
+    <header className="bg-amber-50 border-b border-amber-100">
+      <div className="container mx-auto px-4 py-6">
+        <nav >
+          <ul className="flex justify-center space-x-6 text-sm font-medium text-amber-800">
+            <li>
+              <Link href="/" className="flex items-center space-x-1 hover:text-amber-600 transition-colors">
+                <Home className="h-4 w-4" />
+                <span>Home</span>
+              </Link>
+            </li>
+            <li>
+              <Link href="/recipes" className="flex items-center space-x-1 hover:text-amber-600 transition-colors">
+                <Book className="h-4 w-4" />
+                <span>Recipes</span>
+              </Link>
+            </li>
+            <li>
+              <Link href="/about" className="flex items-center space-x-1 hover:text-amber-600 transition-colors">
+                <Users className="h-4 w-4" />
+                <span>About Us</span>
+              </Link>
+            </li>
+            <li>
+              <Link href="/blog" className="flex items-center space-x-1 hover:text-amber-600 transition-colors">
+                <Coffee className="h-4 w-4" />
+                <span>Blog</span>
+              </Link>
+            </li>
+          </ul>
+        </nav>
+      </div>
+      <div className="bg-amber-100 py-2">
+        <div className="container mx-auto px-4">
+          <p className="text-center text-sm text-amber-800">
+            <span className="font-semibold">Today's Special:</span> Autumn Spiced Pumpkin Soup
+          </p>
+        </div>
+      </div>
+    </header>
+  )
+}
 
 function UglyHeader({ recipe }) {
   return (
@@ -63,16 +109,11 @@ export default function RecipeBlogPost({ recipe }) {
   return (
     <div className="flex flex-col min-h-screen">
       <header className="bg-primary text-primary-foreground w-full">
-        <div className="container mx-auto px-6 py-6 md:py-12">
-          <h1 className="text-4xl font-bold tracking-tight md:text-5xl">{recipe.title}</h1>
-          <p className="text-lg md:text-xl text-primary-foreground/80 mt-2">
-            {recipe.description}
-          </p>
-        </div>
+        <Header />
       </header>
       <main className="flex-1">
         <article className="container mx-auto px-4 py-12">
-          <UglyHeader recipe={recipe} />
+          {/* <UglyHeader recipe={recipe} /> */}
           <RichRecipeHeader />
           <div className="container mx-auto p-4">
             <MarkdownRendererComponent content={recipeMarkdown} />
