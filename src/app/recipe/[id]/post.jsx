@@ -1,6 +1,7 @@
 import Link from "next/link"
-import { Card, CardContent, CardHeader, CardTitle, CardDescription } from "@/components/ui/card"
+import { Card, CardContent, CardHeader, CardTitle, CardFooter, CardDescription } from "@/components/ui/card"
 import { MarkdownRendererComponent } from '@/components/markdown-renderer'
+import Image from "next/image"
 
 // static mock data
 const recipeMarkdown = `
@@ -67,6 +68,7 @@ export default function RecipeBlogPost({ recipe }) {
           </Card>
           <div className="container mx-auto p-4">
             <MarkdownRendererComponent content={recipeMarkdown} />
+
           </div>
         </article>
       </main>
@@ -74,10 +76,74 @@ export default function RecipeBlogPost({ recipe }) {
         <div className="container mx-auto px-4">
           <h2 className="text-2xl font-bold mb-4">Related Recipes</h2>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-            {/* Add related recipes here */}
+            {}
           </div>
+          <RelatedRecipesFooter />
         </div>
       </aside>
     </div>
+  )
+}
+
+// Sample data for related recipes
+const relatedRecipes = [
+  {
+    id: 1,
+    title: "Spicy Chicken Tacos",
+    description: "Delicious tacos with a kick of heat",
+    image: "/placeholder.svg?height=200&width=300",
+    slug: "spicy-chicken-tacos"
+  },
+  {
+    id: 2,
+    title: "Vegetarian Pasta Primavera",
+    description: "Light and fresh pasta loaded with veggies",
+    image: "/placeholder.svg?height=200&width=300",
+    slug: "vegetarian-pasta-primavera"
+  },
+  {
+    id: 3,
+    title: "Classic Beef Burger",
+    description: "Juicy homemade burgers with all the fixings",
+    image: "/placeholder.svg?height=200&width=300",
+    slug: "classic-beef-burger"
+  },
+  {
+    id: 4,
+    title: "Chocolate Chip Cookies",
+    description: "Soft and chewy cookies with gooey chocolate chips",
+    image: "/placeholder.svg?height=200&width=300",
+    slug: "chocolate-chip-cookies"
+  }
+]
+
+function RelatedRecipesFooter() {
+  return (
+    <section className="py-6 bg-gray-50">
+      <div className="container mx-auto px-4">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+          {relatedRecipes.map((recipe) => (
+            <Card key={recipe.id} className="overflow-hidden">
+              <Link href={`/recipes/${recipe.slug}`}>
+                <Image
+                  src={recipe.image}
+                  alt={recipe.title}
+                  width={300}
+                  height={200}
+                  className="w-full h-48 object-cover"
+                />
+                <CardContent className="p-4">
+                  <h3 className="font-semibold text-lg mb-2">{recipe.title}</h3>
+                  <p className="text-sm text-gray-600">{recipe.description}</p>
+                </CardContent>
+                <CardFooter className="p-4 pt-0">
+                  <span className="text-sm text-blue-600 hover:underline">Read more</span>
+                </CardFooter>
+              </Link>
+            </Card>
+          ))}
+        </div>
+      </div>
+    </section>
   )
 }
