@@ -37,7 +37,8 @@ export function RichRecipeHeader({
   tags = ["Italian", "Pasta", "Chicken", "Creamy"]
 }: RecipeHeaderProps) {
   return (
-    <div className="max-w-4xl mx-auto bg-card rounded-lg shadow-lg overflow-hidden">
+    // max-w-4xl if needed
+    <div className="mx-auto bg-card rounded-lg shadow-lg overflow-hidden">
       <div className="grid md:grid-cols-2 gap-6">
         <div className="relative h-[300px] md:h-full">
           <Image
