@@ -38,7 +38,7 @@ function Header() {
     <header className="bg-amber-50 border-b border-amber-100">
       <div className="container mx-auto px-4 py-6">
         <nav>
-          <ul className="flex items-center justify-center space-x-6 text-sm font-medium text-amber-800">
+          <ul className="flex items-center justify-center space-x-8 text-sm font-medium text-amber-800">
             <li>
               <Link href="/" className="flex items-center space-x-1 hover:text-amber-600 transition-colors">
                 <Home className="h-6 w-6" />
@@ -47,7 +47,7 @@ function Header() {
             </li>
             <div className="flex flex-col items-center space-y-4 md:flex-row md:justify-between md:space-y-0">
               <div className="flex w-full max-w-sm items-center space-x-2">
-                <Input type="text" placeholder="Search recipes..." className="bg-white border-amber-200" />
+                <Input type="text" placeholder="Search ideas..." className="bg-white border-amber-200" />
               </div>
             </div>
           </ul>
