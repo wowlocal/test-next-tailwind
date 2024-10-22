@@ -60,7 +60,7 @@ export function RichRecipeHeader({
         </div>
         <div className="p-6 flex flex-col justify-between">
           <div>
-            <h1 className="text-3xl font-bold mb-2">{title}</h1>
+            <h1 className="text-3xl text-primary-foreground font-bold mb-2">{title}</h1>
             <p className="text-muted-foreground mb-4">{description}</p>
             <div className="flex items-center mb-4">
               <div className="flex items-center">
