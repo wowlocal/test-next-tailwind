@@ -58,7 +58,7 @@ export function RichRecipeHeader({
             </Button>
           </div>
         </div>
-        <div className="p-6 flex flex-col justify-between">
+        <div className="p-6 flex flex-col justify-between text-primary-foreground">
           <div>
             <h1 className="text-3xl font-bold mb-2">{title}</h1>
             <p className="text-muted-foreground mb-4">{description}</p>
