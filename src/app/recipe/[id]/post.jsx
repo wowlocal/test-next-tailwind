@@ -41,7 +41,7 @@ function Header2() {
           <nav>
             <ul className="flex flex-col sm:flex-row items-center justify-between space-y-4 sm:space-y-0 sm:space-x-8 text-sm font-medium text-amber-800">
               <li>
-                <Link href="/" className="flex items-center space-x-2 hover:text-amber-600 transition-colors">
+                <Link href="/" className="flex items-center space-x-2 hover:text-amber-900 transition-colors text-primary-foreground">
                   <Home className="h-6 w-6" />
                   <span className="text-xl font-semibold">VeganEats</span>
                 </Link>
