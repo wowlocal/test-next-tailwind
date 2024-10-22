@@ -188,7 +188,7 @@ const relatedRecipes = [
 
 function RelatedRecipesFooter() {
   return (
-    <section className="py-6 bg-gray-50">
+    <section className="py-6">
       <div className="container mx-auto px-4">
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
           {relatedRecipes.map((recipe) => (
