@@ -33,9 +33,45 @@ const recipeMarkdown = `
 [Link to Google](https://www.google.com)
 `;
 
+function Header2() {
+  return (
+    <div className="flex justify-center bg-gradient-to-b from-amber-50 to-white p-4">
+      <header className="w-full max-w-5xl bg-primary rounded-xl shadow-lg overflow-hidden">
+        <div className="px-6 py-4">
+          <nav>
+            <ul className="flex flex-col sm:flex-row items-center justify-between space-y-4 sm:space-y-0 sm:space-x-8 text-sm font-medium text-amber-800">
+              <li>
+                <Link href="/" className="flex items-center space-x-2 hover:text-amber-600 transition-colors">
+                  <Home className="h-6 w-6" />
+                  <span className="text-xl font-semibold">VeganEats</span>
+                </Link>
+              </li>
+              <li className="w-full sm:w-auto">
+                <div className="relative">
+                  <Input
+                    type="text"
+                    placeholder="Search recipes..."
+                    className="pl-10 pr-4 py-2 w-full sm:w-64 bg-amber-50 border-amber-200 rounded-full focus:ring-2 focus:ring-amber-300 focus:border-amber-300 transition-all duration-300"
+                  />
+                  <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 h-5 w-5 text-amber-400" />
+                </div>
+              </li>
+            </ul>
+          </nav>
+        </div>
+        <div className="bg-gradient-to-r from-amber-100 via-amber-50 to-amber-100 py-3 px-6">
+          <p className="text-center text-sm text-amber-800 font-medium">
+            <span className="font-bold">Today's Special:</span> Autumn Spiced Pumpkin Soup
+          </p>
+        </div>
+      </header>
+    </div>
+  )
+}
+
 function Header() {
   return (
-    <header className="bg-amber-50 border-b border-amber-100">
+    <header className="w-full max-w-5xl bg-amber-50 border-b border-amber-100">
       <div className="container mx-auto px-4 py-6">
         <nav>
           <ul className="flex items-center justify-center space-x-8 text-sm font-medium text-amber-800">
@@ -95,9 +131,7 @@ export default function RecipeBlogPost({ recipe }) {
 
   return (
     <div className="flex flex-col min-h-screen">
-      <header className="bg-primary text-primary-foreground w-full">
-        <Header />
-      </header>
+      <Header2 />
       <main className="flex-1">
         <article className="container mx-auto px-4 py-12">
           {/* <UglyHeader recipe={recipe} /> */}
