@@ -35,8 +35,8 @@ const recipeMarkdown = `
 
 function Header2() {
   return (
-    <div className="flex justify-center bg-gradient-to-b from-amber-50 to-white">
-      <header className="w-full bg-primary rounded-xl shadow-lg overflow-hidden">
+    <div className="flex justify-center bg-primary shadow-lg bg-gradient-to-b from-amber-50 to-white">
+      <header className="w-full max-w-5xl mx-auto bg-primary rounded-xl overflow-hidden">
         <div className="px-6 py-4">
           <nav>
             <ul className="flex flex-col sm:flex-row items-center justify-between space-y-4 sm:space-y-0 sm:space-x-8 text-sm font-medium text-amber-800">
