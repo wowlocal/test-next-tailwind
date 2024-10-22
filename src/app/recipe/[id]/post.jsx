@@ -35,13 +35,13 @@ const recipeMarkdown = `
 
 function Header2() {
   return (
-    <div className="flex justify-center bg-gradient-to-b from-amber-50 to-white p-4">
+    <div className="flex justify-center from-amber-50 to-white p-4">
       <header className="w-full max-w-5xl bg-primary rounded-xl shadow-lg overflow-hidden">
         <div className="px-6 py-4">
           <nav>
-            <ul className="flex flex-col sm:flex-row items-center justify-between space-y-4 sm:space-y-0 sm:space-x-8 text-sm font-medium text-amber-800">
+            <ul className="flex flex-col sm:flex-row items-center justify-between space-y-4 sm:space-y-0 sm:space-x-8 text-sm font-medium text-amber-900">
               <li>
-                <Link href="/" className="flex items-center space-x-2 hover:text-amber-600 transition-colors">
+                <Link href="/" className="flex items-center space-x-2 hover:text-primary-foreground transition-colors">
                   <Home className="h-6 w-6" />
                   <span className="text-xl font-semibold">VeganEats</span>
                 </Link>
